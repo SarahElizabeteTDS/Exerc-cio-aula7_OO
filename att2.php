@@ -71,7 +71,7 @@ do
     switch($escolha) 
     {
     case 0:
-        print "Programa encerrado!\n";
+        print "\nPrograma encerrado!\n";
     break;
 
     case 1:
@@ -80,14 +80,23 @@ do
     break;
 
     case 2:
-        foreach ($pessoas as $pessoa) 
+        if (count($pessoas) > 0) 
         {
-            print $pessoa . "\n";
+            print "\nPessoas cadastradas:\n";
+            foreach ($pessoas as $pessoa) 
+            {
+                print $pessoa . "\n";
+            }
         }
+        else
+        {
+            print "Não há pessoas cadastradas";
+        }
+       
     break;
 
     default:
-        print "Opção INVÁLIDA!\n";
+        print "Opção inválida\n";
     }
-}while($opcao != 0);
+}while($escolha != 0);
 
