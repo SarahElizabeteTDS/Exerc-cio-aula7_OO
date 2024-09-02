@@ -66,6 +66,7 @@ do
     print "\n-----------MENU-----------\n";
     print "1- Cadastrar\n";
     print "2- Listar\n";
+    print "3- Excluir cadastro\n";
     print "0- SAIR\n";
     $escolha = readline("Escolha a opção: ");
     switch($escolha) 
@@ -95,8 +96,23 @@ do
        
     break;
 
+    case 3:
+        print "\nPessoas cadastradas atualmente:\n";
+        foreach ($pessoas as $pessoa) 
+        {
+            print $pessoa . "\n";
+        }
+        $exluida = readline("\nQual você deseja excluir? (digite o número do índice, o primeiro usuário é 0): ") ;
+        unset($pessoas[$exluida]);
+        $pessoas = array_values($pessoas);
+        print "\nA pessoa foi removida com sucesso.\n";
+        foreach ($pessoas as $pessoa) 
+        {
+            print $pessoa . "\n";
+        }
+    break;
+
     default:
         print "Opção inválida\n";
     }
 }while($escolha != 0);
-
