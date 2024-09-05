@@ -98,11 +98,13 @@ do
 
     case 3:
         print "\nPessoas cadastradas atualmente:\n";
+        $i = 1;
         foreach ($pessoas as $pessoa) 
         {
-            print $pessoa . "\n";
+            print $i . "-" . $pessoa . "\n";
+            $i++;
         }
-        $excluida = readline("\nQual você deseja excluir? (digite o número do índice, o primeiro usuário é 0): ") ;
+        $excluida = readline("\nQual você deseja excluir? (digite o número do índice, o primeiro usuário é 1): ") ;
         unset($pessoas[$excluida]);
         $pessoas = array_values($pessoas);
         print "\nA pessoa foi removida com sucesso.\n";
