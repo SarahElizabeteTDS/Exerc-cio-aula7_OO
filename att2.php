@@ -102,8 +102,8 @@ do
         {
             print $pessoa . "\n";
         }
-        $exluida = readline("\nQual você deseja excluir? (digite o número do índice, o primeiro usuário é 0): ") ;
-        unset($pessoas[$exluida]);
+        $excluida = readline("\nQual você deseja excluir? (digite o número do índice, o primeiro usuário é 0): ") ;
+        unset($pessoas[$excluida]);
         $pessoas = array_values($pessoas);
         print "\nA pessoa foi removida com sucesso.\n";
         foreach ($pessoas as $pessoa) 
