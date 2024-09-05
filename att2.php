@@ -1,3 +1,4 @@
+
 <?php
 
 class Pessoas
@@ -105,13 +106,22 @@ do
             $i++;
         }
         $excluida = readline("\nQual você deseja excluir? (digite o número do índice): ") ;
-        unset($pessoas[$excluida]);
-        $pessoas = array_values($pessoas);
-        print "\nA pessoa foi removida com sucesso.\n";
-        foreach ($pessoas as $pessoa) 
+        $excluida--;
+        if ($excluida >= 0 && $excluida < count($pessoas)) 
         {
-            print $pessoa . "\n";
+            unset($pessoas[$excluida]);
+            $pessoas = array_values($pessoas);
+            print "\nA pessoa foi removida com sucesso.\n";
+            foreach ($pessoas as $pessoa) 
+            {
+                print $pessoa . "\n";
+            }
         }
+        else
+        {
+            print "\nA pessoa escolhida não existe.";
+        }
+       
     break;
 
     default:
